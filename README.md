@@ -10,6 +10,6 @@ Christoph Kopka's personal hub. The whole page is one playable handheld, the CK-
 - The map links pages by id: castle = `career`, workshop = `projects`, theater = `talks`, shrine = `channel`, post office = `contact`, Chris in the meadow = `about` (a battle that ends on the profile). START opens a warp menu with every page.
 - All pixel art is original and drawn in code (sprite strings in the script). Photos in `img/` are 176 px wide.
 
-Domain: kopkascanvas.com (registered at Hostinger; `CNAME` file is for GitHub Pages).
+Domain: kopkascanvas.com (registered at Porkbun, DNS managed at Hostinger; `CNAME` file is for GitHub Pages).
 
 Hosting: any static host (Cloudflare Pages, Netlify or GitHub Pages). Publish the repo root, then point the domain at it.
