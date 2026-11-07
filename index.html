@@ -53,15 +53,15 @@
 </head>
 <body class="no-js">
 <script>document.body.classList.remove('no-js');</script>
-<a class="skip" href="#story">Skip to the story</a>
+<a class="skip" href="#main">Skip to the portfolio</a>
 <canvas id="sky" aria-hidden="true"></canvas>
 
 <header class="nav" id="nav">
   <a class="brand" href="#top" aria-label="Christoph Kopka, back to top"><b aria-hidden="true">CK</b><span>Christoph Kopka</span></a>
   <nav aria-label="Sections">
-    <a href="#story">Story</a>
-    <a href="#toolkit">Toolkit</a>
-    <a href="#projects">Projects</a>
+    <a href="#work">Work</a>
+    <a href="#stage">On stage</a>
+    <a href="#life">Life</a>
     <a class="cta" href="#contact">Contact</a>
   </nav>
 </header>
@@ -72,22 +72,24 @@
     <h1 id="hero-title">I take complex tech <em>to market</em>.</h1>
   </div>
 
-  <div class="hero-stage" id="stage">
+  <div class="hero-stage" id="stage-game">
     <div class="legend l" aria-hidden="true">
       <h2>MOVE</h2>
-      <p><span class="kc">←</span><span class="kc">→</span> run</p>
-      <p><span class="kc">Space</span> jump, hold for higher</p>
+      <p><span class="kc">←</span><span class="kc">↑</span><span class="kc">↓</span><span class="kc">→</span></p>
+      <p>or <span class="kc">W</span><span class="kc">A</span><span class="kc">S</span><span class="kc">D</span></p>
       <h2 class="gap">BUTTONS</h2>
-      <p><span class="kc">Enter</span> continue</p>
-      <p><span class="kc">M</span> chapters</p>
+      <p><span class="kc">Space</span> or <span class="kc">Enter</span> A</p>
+      <p><span class="kc">Backspace</span> B</p>
+      <p><span class="kc">M</span> pause, watch</p>
       <p><span class="kc">Esc</span> leave the game</p>
     </div>
     <div class="legend r" aria-hidden="true">
       <h2>THE STORY</h2>
-      <p>10 chapters, 2015 to now.</p>
-      <p>Flags open a chapter.</p>
-      <p>Orbs are skills I picked up.</p>
-      <p>Bugs are just bugs. Stomp them.</p>
+      <p>Five islands, five big</p>
+      <p>chapters of my life.</p>
+      <p>Play them in any order.</p>
+      <p>Each one ends with the</p>
+      <p>real story and a video.</p>
     </div>
 
     <div class="rig-wrap" id="rigwrap">
@@ -110,18 +112,18 @@
           <div class="controls">
             <div class="dpad">
               <button type="button" class="u" data-k="up" aria-label="Up" tabindex="-1">▲</button>
-              <button type="button" class="l" data-k="left" aria-label="Run left" tabindex="-1">◀</button>
-              <button type="button" class="r" data-k="right" aria-label="Run right" tabindex="-1">▶</button>
+              <button type="button" class="l" data-k="left" aria-label="Left" tabindex="-1">◀</button>
+              <button type="button" class="r" data-k="right" aria-label="Right" tabindex="-1">▶</button>
               <button type="button" class="d" data-k="down" aria-label="Down" tabindex="-1">▼</button>
             </div>
             <div class="ab">
               <button type="button" data-k="b" aria-label="B: back" tabindex="-1">B</button>
-              <button type="button" data-k="a" aria-label="A: jump" tabindex="-1">A</button>
+              <button type="button" data-k="a" aria-label="A: select" tabindex="-1">A</button>
             </div>
           </div>
           <div class="ss">
-            <div><button type="button" data-k="select" aria-label="Select: chapters" tabindex="-1"></button>SELECT</div>
-            <div><button type="button" data-k="start" aria-label="Start: chapters" tabindex="-1"></button>START</div>
+            <div><button type="button" data-k="select" aria-label="Select" tabindex="-1"></button>SELECT</div>
+            <div><button type="button" data-k="start" aria-label="Start: pause" tabindex="-1"></button>START</div>
           </div>
           <div class="grille" aria-hidden="true"></div>
         </div>
@@ -134,7 +136,7 @@
     <p class="lede">Security go-to-market at Microsoft. Before that, five years at SAP growing cloud ERP with governments and postal services worldwide. I speak on stage, captain Austria's national dodgeball team and run marathons.</p>
     <div class="cta-row">
       <button type="button" class="btn primary" id="play"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M8 5.5v13a1 1 0 0 0 1.5.86l10.6-6.5a1 1 0 0 0 0-1.72L9.5 4.64A1 1 0 0 0 8 5.5z"/></svg>Play my story</button>
-      <a class="btn" href="#story">Read it in a minute</a>
+      <a class="btn" href="#work">Read it in a minute</a>
     </div>
     <ul class="proof">
       <li><b>$100M+</b> annual revenue</li>
@@ -147,9 +149,10 @@
   <button type="button" class="btn exit" id="exit"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" d="M6 6l12 12M18 6L6 18"/></svg>Leave the game</button>
 </section>
 
-<!-- Pop-out cards and the chapter menu live outside the 3D device so their text stays crisp and readable on phones. -->
+<!-- Game cards live outside the 3D device so their text stays crisp and readable on phones. -->
 <div class="popcard" id="popcard" role="dialog" aria-labelledby="pc-title" hidden></div>
 
+<!-- The portfolio. The game reads its photos (#p-…) and videos (.vid) from here, so both stay in sync. -->
 <main id="main">
   <section class="section" id="highlights" aria-labelledby="hl-title">
     <div class="wrap">
@@ -164,258 +167,195 @@
     </div>
   </section>
 
-  <!-- THE STORY. Single source for the portfolio and the game: every .chapter is one level.
-       data-zone picks the pixel world, data-year and data-name label the level, data-short is the line on the game card,
-       data-skills are the two orbs in that level. -->
-  <section class="section" id="story" aria-labelledby="story-title">
+  <section class="section" id="work" aria-labelledby="work-title">
     <div class="wrap">
-      <p class="kicker rv">The story so far</p>
-      <h2 class="rv" id="story-title">Ten chapters, from Canadian farms to Microsoft Security</h2>
-      <p class="section-lede rv">The same story as the game, without the jumping.</p>
+      <p class="kicker rv">Work</p>
+      <h2 class="rv" id="work-title">From a startup to SAP to Microsoft</h2>
+      <p class="section-lede rv">Nine years of taking technology to market, from my first growth job to security at Microsoft.</p>
 
-      <div class="timeline">
-        <article class="chapter rv" id="ch-canada" style="--zc:#7fca86" data-zone="canada" data-year="2015" data-name="Western Canada"
-          data-short="A work-and-travel year on organic farms in western Canada." data-skills="Adaptability|Sustainability">
-          <div class="dot" aria-hidden="true">15</div>
-          <div class="box panel">
-            <figure class="media"><canvas data-scene="canada" width="192" height="120" role="img" aria-label="Pixel art: snowy mountains and pine forest in western Canada"></canvas></figure>
-            <div class="body">
-              <p class="when">2015 · Western Canada</p>
-              <h3>A gap year on Canadian farms</h3>
-              <p class="role">Volunteer, WWOOF Canada</p>
-              <p class="lead">A work-and-travel year on organic farms across western Canada, with a different farm and a different ecological problem each time.</p>
-              <ul class="pts">
-                <li>Hands-on with sustainable farming practices</li>
-                <li>Cultural exchange with every new host</li>
-              </ul>
-              <ul class="chips" aria-label="Skills"><li>Adaptability</li><li>Sustainability</li></ul>
-            </div>
+      <div class="jobs">
+        <article class="job panel rv" id="w-microsoft" style="--zc:#9b8cff">
+          <figure class="media">
+            <img id="p-summit" src="img/photos/ms-summit-640.webp" srcset="img/photos/ms-summit-640.webp 640w, img/photos/ms-summit.webp 1200w" sizes="(max-width: 860px) 92vw, 560px" width="1200" height="800" alt="Christoph speaking to a camera crew next to a Microsoft Security Summit banner" loading="lazy" decoding="async">
+            <figcaption>Microsoft Security Summit, Vienna</figcaption>
+          </figure>
+          <div class="body">
+            <p class="when">Since 2025 · Vienna</p>
+            <h3>Microsoft</h3>
+            <p class="role">Security GTM Manager DACH</p>
+            <p class="lead">Bringing Microsoft Security to market across Germany, Austria and Switzerland.</p>
+            <ul class="pts">
+              <li>Speaker on AI, security and quantum computing</li>
+              <li>On camera at the Microsoft Security Summit in Vienna</li>
+              <li>Helped bring the European Digital Commitment Day 2025 to life, working with C-level decision makers behind the scenes</li>
+            </ul>
+            <ul class="chips" aria-label="Skills"><li>Cybersecurity</li><li>AI</li><li>Executive events</li></ul>
+            <a class="go" href="#stage">Watch the videos</a>
           </div>
         </article>
 
-        <article class="chapter rv" id="ch-vienna" style="--zc:#e8cf6c" data-zone="vienna" data-year="2017" data-name="Vienna"
-          data-short="Business and Chinese studies, with a focus on process and change management." data-skills="Process mgmt|Change mgmt">
-          <div class="dot" aria-hidden="true">17</div>
-          <div class="box panel">
-            <figure class="media"><canvas data-scene="vienna" width="192" height="120" role="img" aria-label="Pixel art: Vienna rooftops, a cathedral spire and the giant Ferris wheel at sunset"></canvas></figure>
-            <div class="body">
-              <p class="when">2017–2021 · Vienna</p>
-              <h3>Business and Chinese in Vienna</h3>
-              <p class="role">BA International Business Administration and Chinese, WU Vienna and University of Vienna</p>
-              <p class="lead">Specialized in process management and change management.</p>
-              <ul class="pts">
-                <li>Thesis: China's social credit system compared with financial credit scoring</li>
-                <li>Mandarin to HSK 4 level</li>
-              </ul>
-              <ul class="chips" aria-label="Skills"><li>Process management</li><li>Change management</li><li>Mandarin</li></ul>
-            </div>
+        <article class="job sap panel rv" id="w-sap" style="--zc:#77a0ea">
+          <figure class="media">
+            <img id="p-japan" src="img/photos/sap-japan-640.webp" srcset="img/photos/sap-japan-640.webp 640w, img/photos/sap-japan.webp 800w" sizes="(max-width: 860px) 92vw, 560px" width="800" height="600" alt="Christoph with the SAP Japan team in front of the SAP logo" loading="lazy" decoding="async">
+            <figcaption>A week in Japan: cloud ERP for government, a partner workshop and GTM planning</figcaption>
+          </figure>
+          <div class="body">
+            <p class="when">2020–2025 · Vienna and worldwide</p>
+            <h3>SAP</h3>
+            <p class="lead">Five years, three roles and one thread: bringing cloud ERP to governments and postal services around the world.</p>
+            <ol class="roles">
+              <li id="r-cloud" style="--zc:#8fd0ff">
+                <p class="rt"><b>Senior GTM Manager, Public Services</b><span>2023–2025</span></p>
+                <ul class="pts">
+                  <li>Led the global go-to-market for SAP's Public Cloud for Public Sector and grew it from $3M to over $6M in one year</li>
+                  <li>Built new markets from the ground up in Australia, Japan, EMEA and the US</li>
+                  <li>Scoped pricing, data security and certification for the launch in EMEA and APJ</li>
+                  <li>Partner masterclasses in Canada, Australia and the UK tripled the pipeline, with 97% average satisfaction</li>
+                </ul>
+              </li>
+              <li id="r-postal" style="--zc:#f0a46f">
+                <p class="rt"><b>Director, Postal Services</b><span>2021–2023</span></p>
+                <ul class="pts">
+                  <li>Advised C-level leaders at 67 postal companies around the world on IT and strategy</li>
+                  <li>Oversaw $100M+ in annual revenue and reached 130% of target against a 15% growth goal</li>
+                  <li>Created “Jumanji for S/4HANA”, a roadmap that became the blueprint for every major postal transformation I advised on</li>
+                  <li>Spoke at the UPU World Leaders Forum 2022 in Frankfurt and at many SAP events</li>
+                </ul>
+              </li>
+              <li id="r-early" style="--zc:#77a0ea">
+                <p class="rt"><b>Solution Management Specialist, Public Services</b><span>2020–2021</span></p>
+                <ul class="pts">
+                  <li>Selected for SAP's Early Talent Acceleration Program, shadowing senior leaders</li>
+                  <li>Ran the reference program: 11 customer stories with Swiss Post, the European Parliament and others</li>
+                  <li>Ran market and territory analyses that set business development quotas and informed the board</li>
+                </ul>
+              </li>
+            </ol>
+            <p class="note">Picked for SAP's Catalyst program, the top 1% of employees.</p>
+            <ul class="chips" aria-label="Skills"><li>Go-to-market</li><li>C-level advisory</li><li>Partner enablement</li><li>Pricing</li><li>Public cloud</li></ul>
           </div>
         </article>
 
-        <article class="chapter rv" id="ch-workheld" style="--zc:#b18be6" data-zone="startup" data-year="2017" data-name="AI startup"
-          data-short="Built marketing and sales from scratch. Finalist for Austria's state prize for digitalization." data-skills="Growth|Scrum">
-          <div class="dot" aria-hidden="true">17</div>
-          <div class="box panel">
-            <figure class="media"><canvas data-scene="startup" width="192" height="120" role="img" aria-label="Pixel art: a startup loft at night with glowing screens"></canvas></figure>
-            <div class="body">
-              <p class="when">2017–2019 · Vienna, alongside my studies</p>
-              <h3>Growth hacker at an AI startup</h3>
-              <p class="role">Growth Hacker, Workheld</p>
-              <p class="lead">Built the marketing and sales strategy of an AI-focused tech startup from scratch.</p>
-              <ul class="pts">
-                <li>Finalist for the Austrian State Prize for Digitalization 2019</li>
-                <li>Google Ads and SEO brought in 20% of new customers</li>
-                <li>Worked in Scrum with the developers and wrote automated tests in JavaScript</li>
-              </ul>
-              <ul class="chips" aria-label="Skills"><li>Growth marketing</li><li>Scrum</li><li>JavaScript</li></ul>
-            </div>
+        <article class="job small panel rv" id="w-workheld" style="--zc:#b18be6">
+          <figure class="media"><canvas data-scene="startup" data-color="#b18be6" width="192" height="120" role="img" aria-label="Pixel art: a startup loft at night with glowing screens"></canvas></figure>
+          <div class="body">
+            <p class="when">2017–2019 · Vienna, alongside my studies</p>
+            <h3>Workheld</h3>
+            <p class="role">Growth Hacker at an AI startup</p>
+            <ul class="pts">
+              <li>Built the marketing and sales strategy from scratch</li>
+              <li>Finalist for the Austrian State Prize for Digitalization 2019</li>
+              <li>Google Ads and SEO brought in 20% of new customers</li>
+              <li>Worked in Scrum with the developers and wrote automated tests in JavaScript</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="stage" aria-labelledby="stage-title">
+    <div class="wrap">
+      <p class="kicker rv">On stage</p>
+      <h2 class="rv" id="stage-title">Talks, events and videos</h2>
+      <p class="section-lede rv">I like explaining complex tech to a full room. A few moments from the last years.</p>
+      <div class="stage-grid">
+        <a class="vid big rv" style="--zc:#f0a46f" href="https://www.youtube.com/watch?v=tBOu5jzhvd4&amp;t=1370s" data-yt="tBOu5jzhvd4" data-start="1370" target="_blank" rel="noopener">
+          <span class="thumb"><img id="p-upu" src="img/photos/upu-podium-640.webp" srcset="img/photos/upu-podium-640.webp 640w, img/photos/upu-podium.webp 800w" sizes="(max-width: 860px) 92vw, 760px" alt="" width="800" height="533" loading="lazy" decoding="async"><span class="play" aria-hidden="true"></span></span>
+          <span class="cap"><b>UPU World Leaders Forum 2022</b><span>My talk on global digital readiness in Frankfurt. It starts at 22:50.</span></span>
+        </a>
+        <a class="vid rv" style="--zc:#9b8cff" href="https://www.youtube.com/watch?v=CfX3spaHwh4" data-yt="CfX3spaHwh4" target="_blank" rel="noopener">
+          <span class="thumb"><img src="img/photos/ms-video.webp" alt="" width="502" height="282" loading="lazy" decoding="async"><span class="play" aria-hidden="true"></span></span>
+          <span class="cap"><b>Microsoft Security Summit, Vienna</b><span>Highlights, with me on camera</span></span>
+        </a>
+        <a class="vid rv" style="--zc:#77a0ea" href="https://www.youtube.com/watch?v=MwUgNdRwvsI" data-yt="MwUgNdRwvsI" target="_blank" rel="noopener">
+          <span class="thumb"><img src="img/posters/edcd.webp" alt="" width="960" height="540" loading="lazy" decoding="async"><span class="play" aria-hidden="true"></span></span>
+          <span class="cap"><b>European Digital Commitment Day 2025</b><span>Highlights. I worked on it behind the scenes with C-level decision makers.</span></span>
+        </a>
+        <figure class="vid still rv" style="--zc:#f0a46f">
+          <span class="thumb"><img src="img/photos/upu-card-640.webp" srcset="img/photos/upu-card-640.webp 640w, img/photos/upu-card.webp 800w" sizes="(max-width: 560px) 92vw, 360px" width="800" height="800" alt="Speaker card for UPU World Leaders Forum 2022, Session 1, Towards Global Digital Readiness, with Christoph Kopka, Industry Manager for Postal and Parcel Services, SAP" loading="lazy" decoding="async"></span>
+          <figcaption class="cap"><b>Speaker card</b><span>17 October 2022, Parcel+Post Expo, Frankfurt</span></figcaption>
+        </figure>
+        <div class="topics panel rv" style="--zc:#77a0ea">
+          <h3>Topics I speak about</h3>
+          <ul class="pts">
+            <li>AI and security, and what quantum computing will change</li>
+            <li>Digital readiness for postal services and the public sector</li>
+            <li>Taking cloud products to new markets with partners</li>
+          </ul>
+          <a class="go mail" href="mailto:Christoph@kopkascanvas.com">Invite me to speak</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="life" aria-labelledby="life-title">
+    <div class="wrap">
+      <p class="kicker rv">Life</p>
+      <h2 class="rv" id="life-title">Off the clock</h2>
+      <p class="section-lede rv">Team sport, endurance and a lot of curiosity. Two of the game's islands come from here.</p>
+      <div class="life-grid">
+        <article class="life wide panel rv" id="l-dodgeball" style="--zc:#ff8a6a">
+          <a class="vid" href="https://www.youtube.com/watch?v=LpuDfe5eBmI" data-yt="LpuDfe5eBmI" target="_blank" rel="noopener">
+            <span class="thumb"><img id="p-dodgeball" src="img/posters/dodgeball.webp" alt="Pixel art of a dodgeball match between Austria and Australia" width="960" height="540" loading="lazy" decoding="async"><span class="play" aria-hidden="true"></span></span>
+            <span class="cap"><b>Austria vs Australia, World Championships 2024</b><span>I'm number 2 for Austria, as captain</span></span>
+          </a>
+          <div class="body">
+            <p class="when">Since 2022</p>
+            <h3>Captain of Team Austria</h3>
+            <p>I captain the Austrian national dodgeball team, including at the 2024 World Championships. Fast decisions, clear calls and a team that trusts each other.</p>
           </div>
         </article>
 
-        <article class="chapter rv" id="ch-hongkong" style="--zc:#ef7b86" data-zone="hongkong" data-year="2019" data-name="Hong Kong"
-          data-short="Business and Chinese at the University of Hong Kong, and a spot on the tennis team." data-skills="Mandarin|Tennis">
-          <div class="dot" aria-hidden="true">19</div>
-          <div class="box panel">
-            <figure class="media"><canvas data-scene="hongkong" width="192" height="120" role="img" aria-label="Pixel art: the Hong Kong skyline over the harbour at night"></canvas></figure>
-            <div class="body">
-              <p class="when">2019 · Hong Kong</p>
-              <h3>Exchange semester at the University of Hong Kong</h3>
-              <p class="role">BBA exchange, Business and Chinese</p>
-              <p class="lead">Studied business and Chinese in one of Asia's financial hubs and played for the HKU tennis team.</p>
-              <ul class="chips" aria-label="Skills"><li>Mandarin</li><li>Intercultural teams</li><li>Tennis</li></ul>
-            </div>
+        <article class="life panel rv" id="l-hiking" style="--zc:#7fca86">
+          <div class="shorts">
+            <a class="vid" href="https://www.youtube.com/shorts/pI9cVeGnqzE" data-yt="pI9cVeGnqzE" data-vertical target="_blank" rel="noopener">
+              <span class="thumb"><img src="img/posters/hike-1.webp" alt="" width="540" height="960" loading="lazy" decoding="async"><span class="play" aria-hidden="true"></span></span>
+              <span class="cap"><b>Don't be afraid to fail big</b><span>Short from a hike</span></span>
+            </a>
+            <a class="vid" href="https://www.youtube.com/shorts/HvkXQiIxRQ4" data-yt="HvkXQiIxRQ4" data-vertical target="_blank" rel="noopener">
+              <span class="thumb"><img src="img/posters/hike-2.webp" alt="" width="540" height="960" loading="lazy" decoding="async"><span class="play" aria-hidden="true"></span></span>
+              <span class="cap"><b>Do something you never did</b><span>Short from a hike</span></span>
+            </a>
+          </div>
+          <div class="body">
+            <h3>Hiking and life lessons</h3>
+            <p>Short films from the mountains, on <a href="https://www.youtube.com/channel/UC9QzZz_5uR1fZrsX0mTiWyA" target="_blank" rel="noopener">my YouTube channel</a>.</p>
           </div>
         </article>
 
-        <article class="chapter rv" id="ch-ethics" style="--zc:#5fd0c0" data-zone="ethics" data-year="2019" data-name="Digital ethics"
-          data-short="Where does technology part ways with sustainable business? I spoke about it at events." data-skills="Founder|Speaking">
-          <div class="dot" aria-hidden="true">19</div>
-          <div class="box panel">
-            <figure class="media"><canvas data-scene="ethics" width="192" height="120" role="img" aria-label="Pixel art: trees with circuit-board branches at dawn"></canvas></figure>
-            <div class="body">
-              <p class="when">2019–2020 · Vienna</p>
-              <h3>Founder of Digital-ethics.online</h3>
-              <p class="role">Founder</p>
-              <p class="lead">Explored the point where technology parts ways with sustainable business decisions.</p>
-              <ul class="pts">
-                <li>Spoke at events and advocated for responsible tech</li>
-              </ul>
-              <ul class="chips" aria-label="Skills"><li>Founder</li><li>Public speaking</li><li>Tech ethics</li></ul>
-            </div>
+        <article class="life panel rv" id="l-canada" style="--zc:#7fca86">
+          <figure class="media"><canvas data-scene="canada" data-color="#7fca86" width="192" height="120" role="img" aria-label="Pixel art: snowy mountains and pine forest in western Canada"></canvas></figure>
+          <div class="body">
+            <p class="when">2015 · Western Canada</p>
+            <h3>A gap year on Canadian farms</h3>
+            <p>Volunteer with WWOOF on organic farms across western Canada. A different host, and a different ecological problem, every few weeks.</p>
           </div>
         </article>
 
-        <article class="chapter rv" id="ch-sap" style="--zc:#77a0ea" data-zone="sap" data-year="2020" data-name="SAP"
-          data-short="Early Talent at SAP. 11 reference stories with customers like Swiss Post and the European Parliament." data-skills="Analytics|References">
-          <div class="dot" aria-hidden="true">20</div>
-          <div class="box panel">
-            <figure class="media"><canvas data-scene="sap" width="192" height="120" role="img" aria-label="Pixel art: glass office towers on a clear morning"></canvas></figure>
-            <div class="body">
-              <p class="when">2020–2021 · SAP</p>
-              <h3>Into SAP through the Early Talent program</h3>
-              <p class="role">Solution Management Specialist, Public Services, SAP</p>
-              <p class="lead">Selected for SAP's Early Talent Acceleration Program, shadowing senior leaders.</p>
-              <ul class="pts">
-                <li>Ran the reference program: 11 customer stories with Swiss Post, the European Parliament and others</li>
-                <li>Ran market and territory analyses that set business development quotas and informed the board</li>
-              </ul>
-              <ul class="chips" aria-label="Skills"><li>Market analysis</li><li>Customer references</li></ul>
-            </div>
+        <article class="life panel rv" id="l-studies" style="--zc:#ef7b86">
+          <figure class="media"><canvas data-scene="hongkong" data-color="#ef7b86" width="192" height="120" role="img" aria-label="Pixel art: the Hong Kong skyline over the harbour at night"></canvas></figure>
+          <div class="body">
+            <p class="when">2017–2021 · Vienna and Hong Kong</p>
+            <h3>Business and Chinese</h3>
+            <p>BA in International Business Administration and Chinese at WU Vienna and the University of Vienna, with an exchange semester and the tennis team at the University of Hong Kong. Thesis on China's social credit system compared with financial credit scoring.</p>
           </div>
         </article>
 
-        <article class="chapter rv" id="ch-postal" style="--zc:#f0a46f" data-zone="postal" data-year="2021" data-name="Postal"
-          data-short="67 postal companies, $100M+ in annual revenue, 130% of target, and a talk at the UPU World Leaders Forum." data-skills="C-level|Stage">
-          <div class="dot" aria-hidden="true">21</div>
-          <div class="box panel">
-            <figure class="media">
-              <img src="img/photos/upu-podium-640.webp" srcset="img/photos/upu-podium-640.webp 640w, img/photos/upu-podium.webp 800w" sizes="(max-width: 860px) 92vw, 560px" width="800" height="533" alt="Christoph speaking at a lectern on stage at the UPU World Leaders Forum 2022" loading="lazy" decoding="async">
-              <figcaption>UPU World Leaders Forum, Frankfurt 2022</figcaption>
-            </figure>
-            <div class="body">
-              <p class="when">2021–2023 · SAP, worldwide</p>
-              <h3>Leading SAP's global postal industry</h3>
-              <p class="role">Director, Postal Services, SAP</p>
-              <p class="lead">Advised C-level leaders at 67 postal companies around the world on IT and strategy.</p>
-              <ul class="pts">
-                <li>Oversaw $100M+ in annual revenue and reached 130% of target against a 15% growth goal</li>
-                <li>Created “Jumanji for S/4HANA”, a roadmap that became the blueprint for advising every major postal company on its transformation</li>
-                <li>Spoke at the UPU World Leaders Forum 2022 in Frankfurt and at many more SAP events</li>
-              </ul>
-              <ul class="chips" aria-label="Skills"><li>C-level advisory</li><li>Enterprise sales</li><li>Public speaking</li></ul>
-            </div>
-            <div class="watch">
-              <p class="watch-h">Watch</p>
-              <div class="vids">
-                <a class="vid" href="https://www.youtube.com/watch?v=tBOu5jzhvd4&amp;t=1370s" data-yt="tBOu5jzhvd4" data-start="1370" target="_blank" rel="noopener">
-                  <span class="thumb"><img src="https://i.ytimg.com/vi/tBOu5jzhvd4/hqdefault.jpg" alt="" width="480" height="360" loading="lazy" decoding="async"><span class="play" aria-hidden="true"></span></span>
-                  <span class="cap"><b>UPU World Leaders Forum 2022</b><span>Session 1: Towards global digital readiness. My part starts at 22:50.</span></span>
-                </a>
-                <figure class="vid still">
-                  <span class="thumb"><img src="img/photos/upu-card-640.webp" srcset="img/photos/upu-card-640.webp 640w, img/photos/upu-card.webp 800w" sizes="(max-width: 560px) 92vw, 360px" width="800" height="800" alt="Speaker card for UPU World Leaders Forum 2022, Session 1, Towards Global Digital Readiness, with Christoph Kopka, Industry Manager for Postal and Parcel Services, SAP" loading="lazy" decoding="async"></span>
-                  <figcaption class="cap"><b>Speaker card</b><span>17 October 2022, Parcel+Post Expo, Frankfurt</span></figcaption>
-                </figure>
-              </div>
-            </div>
+        <article class="life panel rv" id="l-ethics" style="--zc:#5fd0c0">
+          <figure class="media"><canvas data-scene="ethics" data-color="#5fd0c0" width="192" height="120" role="img" aria-label="Pixel art: trees with circuit-board branches at dawn"></canvas></figure>
+          <div class="body">
+            <p class="when">2019–2020 · Vienna</p>
+            <h3>Founder of Digital-ethics.online</h3>
+            <p>Where does technology part ways with sustainable business decisions? I explored it and spoke about responsible tech at events.</p>
           </div>
         </article>
 
-        <article class="chapter rv" id="ch-cloud" style="--zc:#8fd0ff" data-zone="cloud" data-year="2023" data-name="Public cloud"
-          data-short="Took SAP's public sector cloud from $3M to over $6M in a year, across four new regions." data-skills="GTM strategy|Partners">
-          <div class="dot" aria-hidden="true">23</div>
-          <div class="box panel">
-            <figure class="media">
-              <img src="img/photos/sap-japan-640.webp" srcset="img/photos/sap-japan-640.webp 640w, img/photos/sap-japan.webp 800w" sizes="(max-width: 860px) 92vw, 560px" width="800" height="600" alt="Christoph with the SAP Japan team in front of the SAP logo" loading="lazy" decoding="async">
-              <figcaption>A week in Japan: cloud ERP for government, a partner workshop and GTM planning</figcaption>
-            </figure>
-            <div class="body">
-              <p class="when">2023–2025 · SAP, worldwide</p>
-              <h3>Doubling a cloud business for the public sector</h3>
-              <p class="role">Senior GTM Manager, Public Services, SAP</p>
-              <p class="lead">Led the global go-to-market for SAP's Public Cloud for Public Sector.</p>
-              <ul class="pts">
-                <li>Grew the business from $3M to over $6M in one year, more than 100% growth</li>
-                <li>Built new markets from the ground up in Australia, Japan, EMEA and the US</li>
-                <li>Scoped pricing, data security and certification for the launch in EMEA and APJ</li>
-                <li>Partner masterclasses in Canada, Australia and the UK tripled the pipeline, with 97% average satisfaction</li>
-                <li>Picked for SAP's Catalyst program, the top 1% of employees</li>
-              </ul>
-              <ul class="chips" aria-label="Skills"><li>Go-to-market</li><li>Partner enablement</li><li>Pricing</li><li>Public cloud</li></ul>
-            </div>
-          </div>
-        </article>
-
-        <article class="chapter rv" id="ch-security" style="--zc:#9b8cff" data-zone="security" data-year="2025" data-name="Microsoft"
-          data-short="Taking Microsoft Security to market in DACH, and speaking about AI, security and quantum." data-skills="Security|AI">
-          <div class="dot" aria-hidden="true">25</div>
-          <div class="box panel">
-            <figure class="media">
-              <img src="img/photos/ms-summit-640.webp" srcset="img/photos/ms-summit-640.webp 640w, img/photos/ms-summit.webp 1200w" sizes="(max-width: 860px) 92vw, 560px" width="1200" height="800" alt="Christoph speaking to a camera crew next to a Microsoft Security Summit banner" loading="lazy" decoding="async">
-              <figcaption>Microsoft Security Summit, Vienna</figcaption>
-            </figure>
-            <div class="body">
-              <p class="when">Since 2025 · Microsoft, Vienna</p>
-              <h3>Security go-to-market at Microsoft</h3>
-              <p class="role">Security GTM Manager DACH, Microsoft</p>
-              <p class="lead">Bringing Microsoft Security to market across Germany, Austria and Switzerland.</p>
-              <ul class="pts">
-                <li>Speaker on AI, security and quantum computing</li>
-                <li>On camera at the Microsoft Security Summit in Vienna</li>
-                <li>Helped bring the European Digital Commitment Day 2025 to life, working with C-level decision makers behind the scenes</li>
-              </ul>
-              <ul class="chips" aria-label="Skills"><li>Cybersecurity</li><li>AI</li><li>Executive events</li></ul>
-            </div>
-            <div class="watch">
-              <p class="watch-h">Watch</p>
-              <div class="vids">
-                <a class="vid" href="https://www.youtube.com/watch?v=CfX3spaHwh4" data-yt="CfX3spaHwh4" target="_blank" rel="noopener">
-                  <span class="thumb"><img src="img/photos/ms-video.webp" alt="" width="502" height="282" loading="lazy" decoding="async"><span class="play" aria-hidden="true"></span></span>
-                  <span class="cap"><b>Microsoft Security Summit in Vienna</b><span>Highlights, Microsoft Österreich</span></span>
-                </a>
-                <a class="vid" href="https://www.youtube.com/watch?v=MwUgNdRwvsI" data-yt="MwUgNdRwvsI" target="_blank" rel="noopener">
-                  <span class="thumb"><img src="https://i.ytimg.com/vi/MwUgNdRwvsI/hqdefault.jpg" alt="" width="480" height="360" loading="lazy" decoding="async"><span class="play" aria-hidden="true"></span></span>
-                  <span class="cap"><b>European Digital Commitment Day 2025</b><span>Highlights. I worked on it behind the scenes.</span></span>
-                </a>
-              </div>
-            </div>
-          </div>
-        </article>
-
-        <article class="chapter rv" id="ch-beyond" style="--zc:#ff8a6a" data-zone="beyond" data-year="NOW" data-name="Beyond work"
-          data-short="Captain of Austria's dodgeball team, marathon runner, and always building something." data-skills="Leadership|Endurance">
-          <div class="dot" aria-hidden="true">✦</div>
-          <div class="box panel">
-            <figure class="media"><canvas data-scene="beyond" width="192" height="120" role="img" aria-label="Pixel art: alpine peaks at sunset over a running track"></canvas></figure>
-            <div class="body">
-              <p class="when">Off the clock</p>
-              <h3>Captain, runner, builder</h3>
-              <p class="lead">Team sport and endurance keep me sharp, and side projects keep me curious.</p>
-              <ul class="pts">
-                <li>Captain of the Austrian national dodgeball team since 2022, including the 2024 World Championships</li>
-                <li>Marathons and CrossFit</li>
-                <li>Building <a href="https://hybridcoach.ai/" target="_blank" rel="noopener">Hybrid Coach</a>, an open-source training planner</li>
-                <li>Hiking films and life lessons on YouTube</li>
-                <li>Learning Korean, reading Stoic philosophy and Dungeon Crawler Carl</li>
-              </ul>
-              <ul class="chips" aria-label="Skills"><li>Leadership</li><li>Endurance</li><li>Curiosity</li></ul>
-            </div>
-            <div class="watch">
-              <p class="watch-h">Watch</p>
-              <div class="vids">
-                <a class="vid" href="https://www.youtube.com/watch?v=LpuDfe5eBmI" data-yt="LpuDfe5eBmI" target="_blank" rel="noopener">
-                  <span class="thumb"><img src="https://i.ytimg.com/vi/LpuDfe5eBmI/hqdefault.jpg" alt="" width="480" height="360" loading="lazy" decoding="async"><span class="play" aria-hidden="true"></span></span>
-                  <span class="cap"><b>Austria vs Australia, World Championships 2024</b><span>I'm number 2 for Austria, as captain</span></span>
-                </a>
-                <a class="vid" href="https://www.youtube.com/shorts/pI9cVeGnqzE" data-yt="pI9cVeGnqzE" data-vertical target="_blank" rel="noopener">
-                  <span class="thumb"><img src="https://i.ytimg.com/vi/pI9cVeGnqzE/hqdefault.jpg" alt="" width="480" height="360" loading="lazy" decoding="async"><span class="play" aria-hidden="true"></span></span>
-                  <span class="cap"><b>Don't be afraid to fail big</b><span>Short from a hike, on my channel</span></span>
-                </a>
-                <a class="vid" href="https://www.youtube.com/shorts/HvkXQiIxRQ4" data-yt="HvkXQiIxRQ4" data-vertical target="_blank" rel="noopener">
-                  <span class="thumb"><img src="https://i.ytimg.com/vi/HvkXQiIxRQ4/hqdefault.jpg" alt="" width="480" height="360" loading="lazy" decoding="async"><span class="play" aria-hidden="true"></span></span>
-                  <span class="cap"><b>Do something you never did</b><span>Short from a hike, on my channel</span></span>
-                </a>
-              </div>
-            </div>
+        <article class="life row panel rv" id="l-build" style="--zc:#ff8a6a">
+          <span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M3 12h3l3-7 4 14 3-7h5"/></svg></span>
+          <div class="body">
+            <h3>Runner and builder</h3>
+            <p>Marathons and CrossFit. I'm building <a href="https://hybridcoach.ai/" target="_blank" rel="noopener">Hybrid Coach</a> in public, an open-source planner for athletes who mix running and strength training (<a href="https://github.com/ck-sec/hybrid-planner" target="_blank" rel="noopener">source on GitHub</a>). Right now I'm also learning Korean and reading Stoic philosophy and Dungeon Crawler Carl.</p>
           </div>
         </article>
       </div>
@@ -452,27 +392,6 @@
           <li><b>SAP S/4HANA Logistics</b><span>SAP, 2022</span></li>
           <li><b>Developing AI-Embedded Applications at Scale with AI Factory</b><span>SAP, 2021</span></li>
         </ul>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" id="projects" aria-labelledby="pr-title">
-    <div class="wrap">
-      <p class="kicker rv">Side projects</p>
-      <h2 class="rv" id="pr-title">Things I build after hours</h2>
-      <div class="grid2">
-        <div class="tile panel rv" style="--zc:#ff8a6a">
-          <span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M3 12h3l3-7 4 14 3-7h5"/></svg></span>
-          <h3>Hybrid Coach</h3>
-          <p>An open-source planner for hybrid athletes who mix running and strength training. Built in public.</p>
-          <p class="links"><a href="https://hybridcoach.ai/" target="_blank" rel="noopener">hybridcoach.ai</a><a href="https://github.com/ck-sec/hybrid-planner" target="_blank" rel="noopener">Source on GitHub</a></p>
-        </div>
-        <div class="tile panel rv" style="--zc:#ef7b86">
-          <span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="2.5" y="5" width="19" height="14" rx="4" fill="none" stroke="currentColor" stroke-width="2"/><path fill="currentColor" d="M10 9.2v5.6l4.8-2.8z"/></svg></span>
-          <h3>YouTube channel</h3>
-          <p>Hiking, mindset and hands-on videos about protecting your mind, from privacy on your phone to using AI responsibly.</p>
-          <p class="links"><a href="https://www.youtube.com/channel/UC9QzZz_5uR1fZrsX0mTiWyA" target="_blank" rel="noopener">Watch on YouTube</a></p>
-        </div>
       </div>
     </div>
   </section>
